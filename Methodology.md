@@ -1,4 +1,4 @@
-# 🧠 Methodology: LLM-Based SQL Query System for AtliQ T-Shirts
+## 🧠 Methodology: LLM-Based SQL Query System for AtliQ T-Shirts
 
 This project showcases a LangChain-powered LLM application that translates natural language questions into SQL to query a MySQL database containing inventory and pricing data for T-shirts. It leverages few-shot learning, semantic search, and custom prompting.
 
