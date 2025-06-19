@@ -1,28 +1,100 @@
+# 🧠 AtliQ T-Shirts: LLM-Powered SQL Assistant
 
-# AtliQ Tees: Talk to a Database  
+A full-stack LangChain + Google Palm LLM project that translates **natural language** questions into SQL to query a **MySQL database** for business insights about AtliQ's T-shirt inventory and pricing.
 
-This is an end to end LLM project based on Google Palm and Langchain. I have build a system that can talk to MySQL database. 
-User asks questions in a natural language and the system generates answers by converting those questions to an SQL query and
-then executing that query on MySQL database. 
-AtliQ Tees is a T-shirt store where they maintain their inventory, sales and discounts data in MySQL database. A store manager 
-will may ask questions such as,
-- How many white color Adidas t shirts do we have left in the stock?
-- How much sales our store will generate if we can sell all extra-small size t shirts after applying discounts?
-The system is intelligent enough to generate accurate queries for given question and execute them on MySQL database
+---
 
-![](atliq_tees.png)
+## 🚀 Features
 
-## Project Highlights
+* 🔍 Ask natural language questions (e.g., *"How many Levi’s white shirts do we have left?"*)
+* 🧠 Powered by **Google Palm + LangChain** for intelligent SQL generation
+* 🧾 Uses **few-shot learning** to improve query accuracy
+* 📦 Embedding-based **semantic example selection** with HuggingFace + Chroma
+* 📈 Streamlit frontend with live query results and reasoning steps
+* ✅ Works with real MySQL database (schema included)
 
-- AtliQ Tees is a t shirt store that sells Adidas, Nike, Van Heusen and Levi's t shirts 
-- Their inventory, sales and discounts data is stored in a MySQL database
-- I have build an LLM based question and answer system that will use following,
-  - Google Palm LLM
-  - Hugging face embeddings
-  - Streamlit for UI
-  - Langchain framework
-  - Chromadb as a vector store
-  - Few shot learning
-- In the UI, store manager will ask questions in a natural language and it will produce the answers
+---
 
+## 📊 Sample Questions
 
+* "Total inventory value of small-size T-shirts"
+* "Revenue from Levi’s sales post discount"
+* "Stock of white Adidas shirts"
+
+---
+
+## 🧱 Stack
+
+* **LLM**: Google Palm (LangChain wrapper)
+* **Database**: MySQL (`atliq_tshirts` with `t_shirts` and `discounts`)
+* **LangChain**: `SQLDatabaseChain`, `FewShotPromptTemplate`, `Chroma`
+* **UI**: Streamlit
+
+---
+
+## ⚙️ Setup
+
+1. **Install dependencies**:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. **Create `.env` file**:
+
+```
+GOOGLE_API_KEY=your-key-here
+```
+
+3. **Ensure MySQL is running** with the provided schema:
+
+```sql
+-- See schema in methodology file
+```
+
+4. **Run Streamlit app**:
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## 📂 File Structure
+
+```
+├── app.py                # Streamlit frontend
+├── langchain_helper.py  # Main LLM + chain setup
+├── few_shots.py         # Sample SQL QA examples
+├── .env                 # API key
+├── requirements.txt     # All dependencies
+└── README.md            # You are here
+```
+
+---
+
+## 🧪 Evaluation
+
+Tested on 10+ NL-to-SQL queries.
+
+* ✔ Correct column usage enforced
+* ✔ SUM + JOIN patterns learned via prompt
+* ✔ Queries handle brand, size, color, discount cases accurately
+
+---
+
+## 👔 Why This Matters
+
+This project is a practical demo of how **LLMs + LangChain** can power natural-language BI tools, helping non-technical users access database insights.
+
+---
+
+## 🛠 Future Enhancements
+
+* Add SQL schema viewer in UI
+* Allow voice-based questions
+* Support multi-table joins with richer context
+
+---
+
+Made with 💡 by Shivam — integrating LLMs for real-world data intelligence.
