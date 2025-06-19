@@ -1,11 +1,19 @@
-langchain==0.0.284
-python-dotenv==1.0.0
-streamlit==1.22.0
-tiktoken==0.4.0
-faiss-cpu==1.7.4
-protobuf~=3.19.0
-langchain_experimental
-mysql-connector-python
-pymysql
+# Core dependencies
+streamlit
+python-dotenv
+
+# LangChain and LLMs
+langchain
+langchain-experimental
+google-generativeai
+
+# Embeddings & vector store
 sentence-transformers
 chromadb
+
+# MySQL connection
+pymysql
+sqlalchemy
+
+# Optional logging/debug
+openai
